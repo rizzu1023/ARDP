@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void register(){
 
-        String registerAPI = "http://"+ip+"/api/register";
+        String registerAPI = "http://"+MainActivity.ip+"/api/register";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, registerAPI,
                 new Response.Listener<String>() {
                     @Override
@@ -78,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                         if(response.contains("1")){
                             Toast.makeText(getApplicationContext(),"You are successfuly Registerd",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(),Register2Activity.class));
                         }
                     }
                 },

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Register2Activity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/register2page_image_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="168dp"
+        android:src="@drawable/profile"
+        app:civ_border_color="@color/pure_white"
+        app:civ_border_width="1px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/register2page_textfield_username"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_username"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register2page_image_profile" />
+
+    <Button
+        android:id="@+id/register2page_button_submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="64dp"
+        android:background="@drawable/loginpage_button_stroke"
+        android:fontFamily="@font/montserrat_regular"
+        android:onClick="profile"
+        android:text="@string/registerpage_button_signup"
+        android:textColor="@color/loginpage_red"
+        app:layout_constraintEnd_toEndOf="@+id/register2page_textfield_username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/register2page_textfield_username"
+        app:layout_constraintTop_toBottomOf="@+id/register2page_textfield_username" />
+</androidx.constraintlayout.widget.ConstraintLayout>

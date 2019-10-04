@@ -28,7 +28,9 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    public String ip = "192.168.137.1";
+    public static String ip = "192.168.43.4";
+
+    public static String usernameOrEmail;
 
     public Button loginpage_button_login;
     public EditText loginpage_textfield_email;
@@ -90,8 +92,10 @@ public class MainActivity extends AppCompatActivity {
                     }){
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
-
                     Map<String,String> params = new HashMap<>();
+
+                    usernameOrEmail = loginpage_textfield_email.getText().toString();
+
                     params.put("email",loginpage_textfield_email.getText().toString());
                     params.put("password",loginpage_textfield_password.getText().toString());
                     return params;
