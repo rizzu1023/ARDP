@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Art2</string>
+
+    <!--Login page strings-->
+    <string name="loginpage_textview_header_your">YOUR</string>
+    <string name="loginpage_textview_header_art">ART</string>
+    <string name="loginpage_textview_header_museum">MUSEUM</string>
+    <string name="loginpage_tageline1">Your world is your canvas..... Your pallete is your imagination</string>
+    <string name="loginpage_email">Email Address</string>
+    <string name="loginpage_password">Password</string>
+    <string name="loginpage_forgot_password">Forgot your password?</string>
+    <string name="loginpage_button">Log in</string>
+    <string name="loginpage_register">Dont have an Account?</string>
+    <string name="loginpage_skip">Skip</string>
+
+    <!--Register page strings-->
+    <string name="registerpage_textview_header">CREATE A NEW ACCOUNT</string>
+    <string name="registerpage_textfield_name">Name</string>
+    <string name="registerpage_textfield_username">Username</string>
+    <string name="registerpage_textfield_email">Email</string>
+    <string name="registerpage_textfield_gender">Gender</string>
+    <string name="registerpage_textfield_mobile_no">Mobile Number</string>
+    <string name="registerpage_textfield_password">Password</string>
+    <string name="registerpage_textfield_confirm_password">Confirm Password</string>
+    <string name="registerpage_button_signup">Sign Up</string>
+    <string name="registerpage_textview_tagline">By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time.</string>
+    <string name="registerpage_textview_login">Already have an Account?</string>
+
+
+    <!--Profile Page-->
+    <string name="profilepage_textview_username">Rizzu1023</string>
+    <string name="profilepage_textview_bio">All your dreams can come true and I ll make sure of it. Live in the sunshine where you belong</string>
+    <string name="profilepage_textview_fans">FANS</string>
+    <string name="profilepage_textview_arts">ARTS</string>
+    <string name="profilepage_textview_follows">FOLS</string>
+    <string name="profilepage_textview_following">Following</string>
+
+
+    <string name="profilepage_stats_fans">565</string>
+    <string name="profilepage_stats_arts">104</string>
+    <string name="profilepage_stats_follows">291</string>
+
+
+</resources>

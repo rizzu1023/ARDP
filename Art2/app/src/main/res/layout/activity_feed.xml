@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".FeedActivity">
+
+    <Button
+        android:id="@+id/feedpage_button_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/feedpage_button_camera"
+        app:layout_constraintEnd_toStartOf="@+id/feedpage_button_camera"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@color/black"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/feedpage_button_camera" />
+
+    <Button
+        android:id="@+id/feedpage_button_camera"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/feedpage_button_profile"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/feedpage_button_home" />
+
+    <Button
+        android:id="@+id/feedpage_button_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+
+        app:layout_constraintBottom_toBottomOf="@+id/feedpage_button_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/feedpage_button_camera"
+        app:layout_constraintTop_toTopOf="@+id/feedpage_button_camera" />
+
+    <ImageView
+        android:id="@+id/feedpage_image_home"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:elevation="100dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/feedpage_button_home"
+        app:layout_constraintEnd_toStartOf="@+id/feedpage_button_camera"
+        app:layout_constraintStart_toStartOf="@+id/feedpage_button_home"
+        app:layout_constraintTop_toTopOf="@+id/feedpage_button_home"
+        app:srcCompat="@drawable/home_white" />
+
+    <ImageView
+        android:id="@+id/feedpage_image_camera"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:elevation="100dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+
+
+        app:layout_constraintBottom_toBottomOf="@+id/feedpage_button_camera"
+        app:layout_constraintEnd_toStartOf="@+id/feedpage_button_profile"
+        app:layout_constraintStart_toStartOf="@+id/feedpage_button_camera"
+        app:layout_constraintTop_toTopOf="@+id/feedpage_button_camera"
+        app:srcCompat="@drawable/camera" />
+
+    <ImageView
+        android:id="@+id/feedpage_image_profile"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:elevation="100dp"
+        android:onClick="profilepage"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/feedpage_button_profile"
+        app:layout_constraintEnd_toEndOf="@+id/feedpage_button_profile"
+        app:layout_constraintStart_toStartOf="@+id/feedpage_button_profile"
+        app:layout_constraintTop_toTopOf="@+id/feedpage_button_profile"
+        app:srcCompat="@drawable/user" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/registerpage_textview_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="250dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/registerpage_textview_header"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <EditText
+        android:id="@+id/registerpage_textfield_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textview_header" />
+
+    <EditText
+        android:id="@+id/registerpage_textfield_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_username"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textfield_name"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textfield_name"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textfield_name" />
+
+    <EditText
+        android:id="@+id/registerpage_textfield_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textfield_username"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textfield_username"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textfield_username" />
+
+    <EditText
+        android:id="@+id/registerpage_textfield_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_gender"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textfield_email"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textfield_email"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textfield_email" />
+
+    <EditText
+        android:id="@+id/registerpage_textfield_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textfield_mobile_no"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textfield_mobile_no"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textfield_mobile_no" />
+
+    <EditText
+        android:id="@+id/registerpage_textfield_confirm_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_confirm_password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textfield_password"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textfield_password"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textfield_password" />
+
+    <EditText
+        android:id="@+id/registerpage_textfield_mobile_no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/registerpage_textfield_mobile_no"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textfield_gender"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textfield_gender"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textfield_gender" />
+
+    <TextView
+        android:id="@+id/registerpage_textview_tagline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/registerpage_textview_tagline"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textfield_confirm_password"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textfield_confirm_password"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textfield_confirm_password" />
+
+    <Button
+        android:id="@+id/registerpage_button_signup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/loginpage_red"
+
+        android:background="@drawable/loginpage_button_stroke"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/registerpage_button_signup"
+        app:layout_constraintEnd_toEndOf="@+id/registerpage_textview_tagline"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_textview_tagline"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_textview_tagline" />
+
+    <TextView
+        android:id="@+id/registerpage_textview_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:onClick="loginpage"
+        android:text="@string/registerpage_textview_login"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/registerpage_button_signup"
+        app:layout_constraintTop_toBottomOf="@+id/registerpage_button_signup" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:background="@color/black"
+        android:paddingLeft="30dp"
+        android:paddingBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

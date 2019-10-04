@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/loginpage_textview_header_your"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/loginpage_textview_header_your"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/loginpage_textview_header_art"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999" />
+
+    <TextView
+        android:id="@+id/loginpage_textview_header_art"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/loginpage_textview_header_art"
+        android:textColor="@color/loginpage_red"
+        android:textSize="40dp"
+        app:layout_constraintStart_toStartOf="@+id/loginpage_textview_header_museum"
+        app:layout_constraintTop_toBottomOf="@+id/loginpage_textview_header_your" />
+
+    <TextView
+        android:id="@+id/loginpage_textview_header_museum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/loginpage_textview_header_museum"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintStart_toStartOf="@+id/loginpage_textview_header_tagline"
+        app:layout_constraintTop_toBottomOf="@+id/loginpage_textview_header_art" />
+
+    <TextView
+        android:id="@+id/loginpage_textview_header_tagline"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/loginpage_tageline1"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/loginpage_textfield_email"
+        app:layout_constraintStart_toStartOf="@+id/loginpage_textfield_email"
+        app:layout_constraintTop_toBottomOf="@+id/loginpage_textview_header_museum" />
+
+    <EditText
+        android:id="@+id/loginpage_textfield_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/loginpage_email"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginpage_textview_header_tagline" />
+
+    <EditText
+        android:id="@+id/loginpage_textfield_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/loginpage_password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/loginpage_textfield_email"
+        app:layout_constraintStart_toStartOf="@+id/loginpage_textfield_email"
+        app:layout_constraintTop_toBottomOf="@+id/loginpage_textfield_email" />
+
+    <Button
+        android:id="@+id/loginpage_button_login"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/loginpage_button_stroke"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/loginpage_button"
+        android:textColor="@color/loginpage_red"
+        app:layout_constraintEnd_toEndOf="@+id/loginpage_textfield_password"
+        app:layout_constraintStart_toStartOf="@+id/loginpage_textfield_password"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/loginpage_forgot_password"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/loginpage_textfield_password"
+        app:layout_constraintTop_toBottomOf="@+id/loginpage_textfield_password" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:onClick="registerpage"
+        android:text="@string/loginpage_register"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/loginpage_button_login"
+        app:layout_constraintTop_toBottomOf="@+id/loginpage_button_login" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:onClick="profile"
+        android:text="@string/loginpage_skip"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:background="@color/black"
+        android:paddingLeft="30dp"
+        android:paddingBottom="70dp"
+        app:srcCompat="@drawable/logo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
