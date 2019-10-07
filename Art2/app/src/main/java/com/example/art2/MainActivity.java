@@ -59,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
         loginpage_button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                login();
+                if(loginpage_textfield_email.getText().toString().matches("") || loginpage_textfield_password.getText().toString().matches(""))
+                    Toast.makeText(MainActivity.this, "Please insert all the data", Toast.LENGTH_SHORT).show();
+                else
+                    login();
             }
         });
 

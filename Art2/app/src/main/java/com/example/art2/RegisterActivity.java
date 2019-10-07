@@ -26,14 +26,19 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    public String ip = "192.168.137.1";
 
+
+    public static String name;
+    public static String email;
+    public static String gender;
+    public static String mobile_no;
+    public static String password;
 
     public void loginpage(View view){
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
-    EditText registerpage_textfield_name,registerpage_textfield_username,registerpage_textfield_email,registerpage_textfield_mobile_no;
+    EditText registerpage_textfield_name,registerpage_textfield_email,registerpage_textfield_mobile_no;
     EditText registerpage_textfield_gender,registerpage_textfield_password,registerpage_textfield_confirm_password;
     Button registerpage_button_signup;
 
@@ -43,7 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         registerpage_textfield_name = findViewById(R.id.registerpage_textfield_name);
-        registerpage_textfield_username = findViewById(R.id.registerpage_textfield_username);
         registerpage_textfield_email  = findViewById(R.id.registerpage_textfield_email);
         registerpage_textfield_gender = findViewById(R.id.registerpage_textfield_gender);
         registerpage_textfield_mobile_no = findViewById(R.id.registerpage_textfield_mobile_no);
@@ -55,29 +59,42 @@ public class RegisterActivity extends AppCompatActivity {
         registerpage_button_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    register();
+
+                    if(registerpage_textfield_name.getText().toString().matches("") || registerpage_textfield_email.getText().toString().matches("") || registerpage_textfield_gender.getText().toString().matches("") || registerpage_textfield_mobile_no.getText().toString().matches("") || registerpage_textfield_password.getText().toString().matches("") || registerpage_textfield_confirm_password.getText().toString().matches("")){
+                        Toast.makeText(RegisterActivity.this, "Please insert all Data!", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {  if(registerpage_textfield_password.getText().toString().equals(registerpage_textfield_confirm_password.getText().toString()) ) {
+                        name = registerpage_textfield_name.getText().toString();
+                        email = registerpage_textfield_email.getText().toString();
+                        gender = registerpage_textfield_gender.getText().toString();
+                        mobile_no = registerpage_textfield_mobile_no.getText().toString();
+                        password = registerpage_textfield_password.getText().toString();
+
+                        register();
+                    }
+                        else{
+                            Toast.makeText(RegisterActivity.this, "Password Doesn't Match", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
             }
         });
     }
 
     public void register(){
 
-        String registerAPI = "http://"+MainActivity.ip+"/api/register";
+        String registerAPI = "http://"+MainActivity.ip+"/api/emailExistOrNot";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, registerAPI,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        if(response.contains("2")){
-                            Toast.makeText(getApplicationContext(),"Password doesn't match!",Toast.LENGTH_SHORT).show();
-                        }
-                        if(response.contains("3")){
-                            Toast.makeText(getApplicationContext(),"This username is not available!",Toast.LENGTH_SHORT).show();
-                        }
+
                         if(response.contains("0")){
                             Toast.makeText(getApplicationContext(),"This Email Address already in used",Toast.LENGTH_SHORT).show();
                         }
                         if(response.contains("1")){
-                            Toast.makeText(getApplicationContext(),"You are successfuly Registerd",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),Register2Activity.class));
                         }
                     }
@@ -92,13 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
-                params.put("name",registerpage_textfield_name.getText().toString());
-                params.put("username",registerpage_textfield_username.getText().toString());
                 params.put("email",registerpage_textfield_email.getText().toString());
-                params.put("gender",registerpage_textfield_gender.getText().toString());
-                params.put("mobile_no",registerpage_textfield_mobile_no.getText().toString());
-                params.put("password",registerpage_textfield_password.getText().toString());
-                params.put("cpassword",registerpage_textfield_confirm_password.getText().toString());
                 return params;
             }
         };

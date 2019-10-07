@@ -75,7 +75,7 @@
         android:padding="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:textSize="13dp"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginpage_textview_header_tagline" />
@@ -84,7 +84,7 @@
         android:id="@+id/loginpage_textfield_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="@font/montserrat_regular"
@@ -93,7 +93,7 @@
         android:padding="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:textSize="13dp"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="@+id/loginpage_textfield_email"
         app:layout_constraintStart_toStartOf="@+id/loginpage_textfield_email"
         app:layout_constraintTop_toBottomOf="@+id/loginpage_textfield_email" />

@@ -45,7 +45,6 @@
         android:layout_marginTop="64dp"
         android:background="@drawable/loginpage_button_stroke"
         android:fontFamily="@font/montserrat_regular"
-        android:onClick="profile"
         android:text="@string/registerpage_button_signup"
         android:textColor="@color/loginpage_red"
         app:layout_constraintEnd_toEndOf="@+id/register2page_textfield_username"
