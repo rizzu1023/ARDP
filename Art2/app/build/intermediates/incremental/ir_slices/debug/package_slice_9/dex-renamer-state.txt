@@ -1,0 +1,4 @@
+#Thu Oct 10 14:26:19 IST 2019
+base.0=C\:\\Users\\Rizzu1023\\Desktop\\ARDP\\Art2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+path.0=classes.dex
+renamed.0=classes.dex
