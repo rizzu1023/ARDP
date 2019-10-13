@@ -49,6 +49,8 @@ public class Register2Activity extends AppCompatActivity {
     EditText register2page_textfield_username;
 
     private CircleImageView ProfileImage;
+
+
     private static final int PICK_IMAGE = 1;
     Uri ImageUri;
 
@@ -56,6 +58,8 @@ public class Register2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
+
+
 
         register2page_button_submit = findViewById(R.id.register2page_button_submit);
         register2page_textfield_username = findViewById(R.id.register2page_textfield_username);
@@ -119,8 +123,11 @@ public class Register2Activity extends AppCompatActivity {
 
     public void register2(){
 
+
+
         String  image = imageToString(bitmap);
-        Log.d("rizzuthis",image);
+          Integer count = image.length();
+        Log.d("rizzuthis", String.valueOf(count));
 //        Log.d("rizzuthis2",image.getClass().getName());
         String registerAPI = "http://"+MainActivity.ip+"/api/register";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, registerAPI,
@@ -129,7 +136,7 @@ public class Register2Activity extends AppCompatActivity {
                     public void onResponse(String response) {
 //                        String r = response.trim();
 //                        Toast.makeText(getApplicationContext(),r,Toast.LENGTH_LONG).show();
-                          Log.d("rizzuthis3",response);
+//                          Log.d("rizzuthis3",response);
 
                         if(response.contains("0")){
                             Toast.makeText(getApplicationContext(),"Username is not Available!",Toast.LENGTH_SHORT).show();
@@ -167,7 +174,8 @@ public class Register2Activity extends AppCompatActivity {
         ){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                String image = imageToString(bitmap);
+//                String image = imageToString(bitmap);
+
                 Map<String,String> params = new HashMap<>();
                 params.put("username",register2page_textfield_username.getText().toString());
                 params.put("name",RegisterActivity.name);
@@ -175,7 +183,7 @@ public class Register2Activity extends AppCompatActivity {
                 params.put("gender",RegisterActivity.gender);
                 params.put("mobile_no",RegisterActivity.mobile_no);
                 params.put("password",RegisterActivity.password);
-                params.put("image_url",image);
+                params.put("image_url",imageToString(bitmap));
                 return params;
             }
         };

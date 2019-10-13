@@ -34,6 +34,8 @@ public class RegisterActivity extends AppCompatActivity {
     public static String mobile_no;
     public static String password;
 
+    public static String usernameOrEmail;
+
     public void loginpage(View view){
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
@@ -83,6 +85,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void register(){
+
+        usernameOrEmail = registerpage_textfield_email.getText().toString();
 
         String registerAPI = "http://"+MainActivity.ip+"/api/emailExistOrNot";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, registerAPI,
