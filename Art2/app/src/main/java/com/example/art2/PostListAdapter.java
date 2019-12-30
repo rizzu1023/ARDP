@@ -1,5 +1,9 @@
 package com.example.art2;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.PostListViewHolder> {
 
-    private String[] data;
-    public PostListAdapter(String[] data){
+    private UserDetail[] data;
+    private Context context;
+    public PostListAdapter(Context context, UserDetail[] data){
         this.data = data;
+        this.context = context;
     }
 
     @NonNull
@@ -24,10 +30,23 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.PostLi
         return new PostListViewHolder(view);
     }
 
+    public Bitmap StringToBitmap(String encodedString){
+        try {
+            byte [] encodeByte= Base64.decode(encodedString,Base64.DEFAULT);
+            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+            return bitmap;
+        } catch(Exception e) {
+            e.getMessage();
+            return null;
+        }
+    }
+
     @Override
     public void onBindViewHolder(@NonNull PostListViewHolder holder, int position) {
-        String username = data[position];
-        holder.feedpage_textview_username.setText(username);
+        UserDetail detail = data[position];
+        holder.feedpage_textview_username.setText(detail.username);
+        holder.feedpage_image_post.setImageBitmap(StringToBitmap(detail.image_url));
+
     }
 
     @Override

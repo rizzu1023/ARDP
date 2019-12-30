@@ -60,7 +60,6 @@ public class Register2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_register2);
 
 
-
         register2page_button_submit = findViewById(R.id.register2page_button_submit);
         register2page_textfield_username = findViewById(R.id.register2page_textfield_username);
         ProfileImage = findViewById(R.id.register2page_image_profile);
@@ -71,7 +70,7 @@ public class Register2Activity extends AppCompatActivity {
                 gallery.setType("image/*");
                 gallery.setAction(Intent.ACTION_GET_CONTENT);
 
-                startActivityForResult(Intent.createChooser(gallery, "Select Image"),PICK_IMAGE);
+                startActivityForResult(Intent.createChooser(gallery, "Select Image"), PICK_IMAGE);
 
             }
         });
@@ -89,47 +88,42 @@ public class Register2Activity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode ==  PICK_IMAGE && resultCode == RESULT_OK){
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK) {
             ImageUri = data.getData();
-            try{
+            try {
 //                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),ImageUri);
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), ImageUri);
                 ProfileImage.setImageBitmap(bitmap);
 
 //                bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream);
 //                byte[] imagebyte = stream.toByteArray();
-               // Bitmap imageCompressed = BitmapFactory.decodeByteArray(imagebyte,0,imagebyte.length);
+                // Bitmap imageCompressed = BitmapFactory.decodeByteArray(imagebyte,0,imagebyte.length);
 
 
-
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
         }
     }
 
-    public String imageToString(Bitmap bitmap){
+    public String imageToString(Bitmap bitmap) {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,20,stream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 20, stream);
         byte[] imagebyte = stream.toByteArray();
-        String encode = Base64.encodeToString(imagebyte,Base64.DEFAULT);
+        String encode = Base64.encodeToString(imagebyte, Base64.DEFAULT);
 
         return encode;
     }
 
 
+    public void register2() {
 
-
-    public void register2(){
-
-
-
-        String  image = imageToString(bitmap);
-          Integer count = image.length();
+        String image = imageToString(bitmap);
+        Integer count = image.length();
         Log.d("rizzuthis", String.valueOf(count));
 //        Log.d("rizzuthis2",image.getClass().getName());
-        String registerAPI = "http://"+MainActivity.ip+"/api/register";
+        String registerAPI = "http://" + MainActivity.ip + "/api/register";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, registerAPI,
                 new Response.Listener<String>() {
                     @Override
@@ -138,12 +132,12 @@ public class Register2Activity extends AppCompatActivity {
 //                        Toast.makeText(getApplicationContext(),r,Toast.LENGTH_LONG).show();
 //                          Log.d("rizzuthis3",response);
 
-                        if(response.contains("0")){
-                            Toast.makeText(getApplicationContext(),"Username is not Available!",Toast.LENGTH_SHORT).show();
+                        if (response.contains("0")) {
+                            Toast.makeText(getApplicationContext(), "Username is not Available!", Toast.LENGTH_SHORT).show();
                         }
-                        if(response.contains("1")){
-                            Toast.makeText(getApplicationContext(),"You are Successfully Registered",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        if (response.contains("1")) {
+                            Toast.makeText(getApplicationContext(), "You are Successfully Registered", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }
                     }
                 },
@@ -152,11 +146,11 @@ public class Register2Activity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         NetworkResponse networkResponse = error.networkResponse;
                         if (networkResponse != null) {
-                            Log.d("Volley", "Error. HTTP Status Code:"+networkResponse.statusCode);
+                            Log.d("Volley", "Error. HTTP Status Code:" + networkResponse.statusCode);
                         }
                         if (error instanceof TimeoutError) {
                             Log.e("Volley", "TimeoutError");
-                        }else if(error instanceof NoConnectionError){
+                        } else if (error instanceof NoConnectionError) {
                             Log.d("Volley", "NoConnectionError");
                         } else if (error instanceof AuthFailureError) {
                             Log.d("Volley", "AuthFailureError");
@@ -167,23 +161,23 @@ public class Register2Activity extends AppCompatActivity {
                         } else if (error instanceof ParseError) {
                             Log.d("Volley", "ParseError");
                         }
-                        Log.e("Error",error.toString());
+                        Log.e("Error", error.toString());
                         Toast.makeText(Register2Activity.this, error.toString(), Toast.LENGTH_LONG).show();
                     }
                 }
-        ){
+        ) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 //                String image = imageToString(bitmap);
 
-                Map<String,String> params = new HashMap<>();
-                params.put("username",register2page_textfield_username.getText().toString());
-                params.put("name",RegisterActivity.name);
-                params.put("email",RegisterActivity.email);
-                params.put("gender",RegisterActivity.gender);
-                params.put("mobile_no",RegisterActivity.mobile_no);
-                params.put("password",RegisterActivity.password);
-                params.put("image_url",imageToString(bitmap));
+                Map<String, String> params = new HashMap<>();
+                params.put("username", register2page_textfield_username.getText().toString());
+                params.put("name", RegisterActivity.name);
+                params.put("email", RegisterActivity.email);
+                params.put("gender", RegisterActivity.gender);
+                params.put("mobile_no", RegisterActivity.mobile_no);
+                params.put("password", RegisterActivity.password);
+                params.put("image_url", imageToString(bitmap));
                 return params;
             }
         };
